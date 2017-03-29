@@ -24,7 +24,6 @@ public class Player implements Serializable {
 	}
 
 
-
 	public void playerStats() {
 
 		System.out.printf(name + ": PTS %.2f RBD %.2f AST %.2f STL %.2f BLK %.2f ", points, rebounds, assists, steals,
