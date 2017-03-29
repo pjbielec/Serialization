@@ -1,0 +1,35 @@
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class WriteObj {
+
+	public static void main(String[] args) {
+
+		System.out.println("Writing");
+
+		Player lebron = new Player("LeBron James", 25.4, 8.1, 8.8, 1.5, 0.9);
+		Player durant = new Player("Kevin Durant", 28.2, 8.4, 4.2, 1.2, 1.4);
+
+		lebron.playerStats();
+		System.out.println();
+		durant.playerStats();
+		System.out.println();
+
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("players.bin"))) {
+
+			oos.writeObject(lebron);
+			oos.writeObject(durant);
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
