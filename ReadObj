@@ -1,0 +1,34 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class ReadObj {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Reading");
+
+		try (ObjectInputStream ios = new ObjectInputStream(new FileInputStream("players.bin"))){
+			
+			Player player1 = (Player) ios.readObject();
+			Player player2 = (Player) ios.readObject();
+			
+			player1.playerStats();
+			System.out.println();
+			player2.playerStats();
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}
