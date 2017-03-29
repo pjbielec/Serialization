@@ -1,0 +1,35 @@
+import java.io.Serializable;
+
+public class Player implements Serializable {
+
+
+	private static final long serialVersionUID = -90546530560035340L;
+	
+	private String name;
+	private double points;
+	private double rebounds;
+	private double assists;
+	private double steals;
+	private double blocks;
+	
+	
+
+	public Player(String name, double points, double rebounds, double assists, double steals, double blocks) {
+		this.name = name;
+		this.points = points;
+		this.rebounds = rebounds;
+		this.assists = assists;
+		this.steals = steals;
+		this.blocks = blocks;
+	}
+
+
+
+	public void playerStats() {
+
+		System.out.printf(name + ": PTS %.2f RBD %.2f AST %.2f STL %.2f BLK %.2f ", points, rebounds, assists, steals,
+				blocks);
+
+	}
+
+}
